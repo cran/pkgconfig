@@ -1,0 +1,14 @@
+0e5987f3b9b9987da0c7b37a4a172d76 *DESCRIPTION
+3d3a970c02e93076a92aba9f55c87afd *LICENSE
+b55933dbd15bd87fdf6733e5e899139f *NAMESPACE
+b1a6a1cfebdd5e3ffffe54ef33e22ed3 *R/getset.R
+1531da19568f0512ff768360cb78540f *R/pkgconfig-package.R
+024f0d686d411b5154d497532c8726b7 *R/utils.R
+9f8bbdc0c3967362c91a1d9a4cf2d367 *inst/NEWS.md
+f9b92dd678500cf5789859028ab1b5eb *inst/README.Rmd
+f9b92dd678500cf5789859028ab1b5eb *inst/README.md
+91f5c74935c4a5d7d4d5520b60ffb544 *man/get_config.Rd
+e97c9e9fa3c680d05d3758f07448ef2b *man/pkgconfig-package.Rd
+1b6fd1e591cc2cbe5bf9f059ad153e8d *man/set_config.Rd
+f6af42846da0ec114abc91c57838384e *tests/testthat.R
+6ce98f440d7f8f758b27742383dd0bd3 *tests/testthat/tests.R
