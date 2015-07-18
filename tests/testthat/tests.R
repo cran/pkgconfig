@@ -21,6 +21,27 @@ test_that("Session variables", {
 
 })
 
+
+test_that("Composite values", {
+
+  on.exit(try(disposables::dispose_packages(pkgs)))
+  pkgs <- disposables::make_packages(
+    pkgconfigtest = {
+      f <- function() {
+        set_config(foo = list(1,2,3))
+        get_config("foo")
+      }
+      g <- function() { get_config("foo") }
+      h <- function() { get_config("foobar") }
+    }
+  )
+
+  expect_equal(f(), list(1,2,3))
+  expect_equal(g(), list(1,2,3))
+  expect_null(h())
+
+})
+
 context("Keys are private")
 
 test_that("Two packages do not interfere", {
@@ -72,9 +93,12 @@ test_that("Cannot get if set by another package", {
 
 test_that("Setting from .onLoad works fine", {
 
-  on.exit(try(disposables::dispose_packages(pkgs)))
+  on.exit(try(disposables::dispose_packages(pkgs)), add = TRUE)
 
   pkgs <- disposables::make_packages(
+
+    lib_dir = .libPaths()[1],
+    quiet = FALSE,
 
     utility = {
       getter <- function() { pkgconfig::get_config("key", "fallback") }

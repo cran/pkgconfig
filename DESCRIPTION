@@ -1,6 +1,6 @@
 Package: pkgconfig
 Title: Private Configuration for 'R' Packages
-Version: 1.0.0
+Version: 2.0.0
 Author: Gabor Csardi
 Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
 Description: Set configuration options on a per-package basis.
@@ -13,6 +13,6 @@ Suggests: testthat, disposables
 URL: https://github.com/gaborcsardi/pkgconfig
 BugReports: https://github.com/gaborcsardi/pkgconfig/issues
 NeedsCompilation: no
-Packaged: 2015-07-13 01:45:01 UTC; gaborcsardi
+Packaged: 2015-07-18 14:08:19 UTC; gaborcsardi
 Repository: CRAN
-Date/Publication: 2015-07-13 08:30:36
+Date/Publication: 2015-07-18 17:36:41
