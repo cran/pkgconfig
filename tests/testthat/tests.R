@@ -93,13 +93,13 @@ test_that("Cannot get if set by another package", {
 
 test_that("Setting from .onLoad works fine", {
 
+  if (utils::packageVersion("disposables") < "1.0.3") {
+    skip("test needs disposables >= 1.0.3")
+  }
+
   on.exit(try(disposables::dispose_packages(pkgs)), add = TRUE)
 
   pkgs <- disposables::make_packages(
-
-    lib_dir = .libPaths()[1],
-    quiet = FALSE,
-
     utility = {
       getter <- function() { pkgconfig::get_config("key", "fallback") }
     },
@@ -117,7 +117,6 @@ test_that("Setting from .onLoad works fine", {
     pkgC = {
       getter <- function() { utility::getter() }
     }
-
   )
 
   expect_equal(pkgA::getter(), "A")
